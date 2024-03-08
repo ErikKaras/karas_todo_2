@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 0, 0; /* Červená barva textu */
+  --background-start-rgb: 214, 219, 220; /* Začáteční barva pozadí */
+  --background-end-rgb: 255, 255, 255; /* Koncová barva pozadí */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255; /* Bílá barva textu v tmavém režimu */
+    --background-start-rgb: 0, 0, 0; /* Začáteční barva pozadí v tmavém režimu */
+    --background-end-rgb: 0, 0, 0; /* Koncová barva pozadí v tmavém režimu */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+          to bottom,
+          transparent,
+          rgb(var(--background-end-rgb))
+  )
+  rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
